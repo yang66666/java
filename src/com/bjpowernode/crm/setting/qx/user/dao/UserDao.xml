@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.crm.setting.qx.user.dao.UserDao">
+	
+	<insert id="save" parameterType="user">
+		insert into tbl_user(id,loginAct,loginPwd,name,deptNo,expireTime,lockStatus,allowIps,email,createBy,createTime)
+		 values(#{id},#{loginAct},#{loginPwd},#{name},#{deptNo},#{expireTime},#{lockStatus},#{allowIps},#{email},#{createBy},#{createTime})
+	</insert>
+	
+	<delete id="delete" parameterType="string">
+		delete from tbl_user where id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="user">
+		update tbl_user
+		set loginAct=#{loginAct},loginPwd=#{loginPwd},name=#{name},deptNo=#{deptNo},expireTime=#{expireTime},lockStatus=#{lockStatus},allowIps=#{allowIps},email=#{email},createBy=#{createBy},createTime=#{createTime},editBy=#{editBy},editTime=#{editTime}                                                
+		where id=#{id}
+	</update>
+	
+	<select id="getById" parameterType="string" resultType="user">
+		select id,loginAct,loginPwd,name,deptNo,expireTime,lockStatus,allowIps,email,createBy,createTime,editBy,editTime
+		from tbl_user
+		where id=#{id}
+	</select>
+	
+	<select id="getAll" parameterType="map" resultType="user">
+		<!-- select id,loginAct,loginPwd,name,deptNo,expireTime,lockStatus,allowIps,email,createBy,createTime,editBy,editTime -->
+		select *
+		from tbl_user
+		
+		<where>
+			
+			<if test="pmap.name1!=null and pmap.name1!=''">
+				and name like #{pmap.name1}
+			</if>
+			<if test="pmap.dept1!=null and pmap.dept1!=''">
+				and deptNo=#{pmap.dept1}
+			</if>
+			<if test="pmap.lock1!=null and pmap.lock1!=''">
+				and lockStatus=#{pmap.lock1}
+			</if>
+			<if test="pmap.time1!=null and pmap.time1!=''">
+				and expireTime&gt;#{pmap.time1}
+			</if>
+			<if test="pmap.time2!=null and pmap.time2!=''">
+				and expireTime&lt;#{pmap.time2}
+			</if>
+			
+		</where>
+		
+		limit #{pumap.skipCount},#{pumap.pageCount}
+	</select>
+	
+	<select id="getTotal" resultType="int" parameterType="map">
+		select count(*) from tbl_user
+		
+		<where>
+			
+			<if test="name1!=null and name1!=''">
+				name like #{name1}
+			</if>
+			<if test="dept1!=null and dept1!=''">
+				and deptNo=#{dept1}
+			</if>
+			<if test="lock1!=null and lock1!=''">
+				and lockStatus=#{lock1}
+			</if>
+			<if test="time1!=null and time1!=''">
+				and expireTime&gt;#{time1}
+			</if>
+			<if test="time2!=null and time2!=''">
+				and expireTime&lt;#{time2}
+			</if>
+			
+			
+			
+		</where>
+		
+	</select>
+	
+	<update id="updateLockStatus" parameterType="user">
+		
+		update tbl_user set lockStatus=#{lockStatus} where id=#{id}
+		
+	</update>
+	
+	<select id="getByActAndPwd" parameterType="string" resultType="user">
+		select * from tbl_user where loginAct=#{0} and loginPwd=#{1}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

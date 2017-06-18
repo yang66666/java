@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>crm_002</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>deptList</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.dept.controller.DeptListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deptList</servlet-name>
+  	<url-pattern>/dept/list.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>deptSave</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.dept.controller.DeptSaveController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deptSave</servlet-name>
+  	<url-pattern>/dept/save.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>deptEdit</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.dept.controller.DeptEditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deptEdit</servlet-name>
+  	<url-pattern>/dept/edit.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>deptUpdate</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.dept.controller.DeptUpdateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deptUpdate</servlet-name>
+  	<url-pattern>/dept/update.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>deptDelete</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.dept.controller.DeptDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>deptDelete</servlet-name>
+  	<url-pattern>/dept/delete.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>userList</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.qx.user.controller.UserListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userList</servlet-name>
+  	<url-pattern>/user/list.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>userSave</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.qx.user.controller.UserSaveController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userSave</servlet-name>
+  	<url-pattern>/user/save.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>userDetail</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.qx.user.controller.UserDetailController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userDetail</servlet-name>
+  	<url-pattern>/user/detail.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>userEdit</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.qx.user.controller.UserEditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userEdit</servlet-name>
+  	<url-pattern>/user/edit.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>userUpdate</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.qx.user.controller.UserUpdateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userUpdate</servlet-name>
+  	<url-pattern>/user/update.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>userDelete</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.qx.user.controller.UserDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userDelete</servlet-name>
+  	<url-pattern>/user/delete.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>userChangeLs</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.setting.qx.user.controller.UserChangeLsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userChangeLs</servlet-name>
+  	<url-pattern>/user/changeLs.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>securityLogin</servlet-name>
+  	<servlet-class>com.bjpowernode.crm.security.web.controller.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>securityLogin</servlet-name>
+  	<url-pattern>/security/login.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
